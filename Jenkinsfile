@@ -4,7 +4,8 @@ pipeline {
         stage('archive file') {
             steps {
                 echo 'hello world'
-                archiveArtifacts artifacts: '**/src/*', followSymlinks: false
+                def artifactsFilePath = archiveArtifacts artifacts: '**/src/*', followSymlinks: false
+                echo artifactsFilePath
             }
         }
     }
